@@ -6,7 +6,8 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, Plus } from "lucide-react";
+import Link from "next/link";
 
 interface SetData {
   id: number;
@@ -81,6 +82,13 @@ export function DashboardClient({ date, workoutData }: DashboardClientProps) {
           </PopoverContent>
         </Popover>
       </div>
+
+      <Button asChild className="w-full mb-6">
+        <Link href="/workouts/new">
+          <Plus className="h-4 w-4 mr-2" />
+          New Workout
+        </Link>
+      </Button>
 
       {workoutData.length === 0 ? (
         <p className="text-muted-foreground text-center py-12">
