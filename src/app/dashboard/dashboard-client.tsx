@@ -6,7 +6,8 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, Pencil, Plus } from "lucide-react";
+import Link from "next/link";
 
 interface SetData {
   id: number;
@@ -82,6 +83,13 @@ export function DashboardClient({ date, workoutData }: DashboardClientProps) {
         </Popover>
       </div>
 
+      <Button asChild className="w-full mb-6">
+        <Link href="/workouts/new">
+          <Plus className="h-4 w-4 mr-2" />
+          New Workout
+        </Link>
+      </Button>
+
       {workoutData.length === 0 ? (
         <p className="text-muted-foreground text-center py-12">
           No workouts logged for this date.
@@ -91,9 +99,16 @@ export function DashboardClient({ date, workoutData }: DashboardClientProps) {
           {workoutData.map(({ workout, exercises }) => (
             <Card key={workout.id}>
               <CardHeader>
-                <CardTitle className="text-lg">
-                  {workout.name ?? "Workout"}
-                </CardTitle>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg">
+                    {workout.name ?? "Workout"}
+                  </CardTitle>
+                  <Button variant="ghost" size="sm" asChild>
+                    <Link href={`/dashboard/workout/${workout.id}`}>
+                      <Pencil className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
                 {workout.duration != null && (
                   <p className="text-sm text-muted-foreground">
                     {Math.floor(workout.duration / 60)}m {workout.duration % 60}s

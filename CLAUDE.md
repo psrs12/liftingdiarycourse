@@ -2,9 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Documentation-First Rule
+## Code Generation Guidelines
 
 **ALWAYS** consult the relevant documentation files in the `/docs` directory before generating any code. The docs contain design specs, requirements, and reference material that must inform all implementation decisions. Read the applicable doc first, then write code that aligns with it.
+- /docs/ui.md
+- /docs/auth.md
+- /docs/data-mutations.md
+- /docs/routing.md
 
 ## Commands
 

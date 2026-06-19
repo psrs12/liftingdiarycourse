@@ -29,4 +29,6 @@ This project uses **shadcn/ui** as the sole source of UI components. All UI elem
 - Button (`@/components/ui/button`)
 - Calendar (`@/components/ui/calendar`)
 - Card (`@/components/ui/card`)
+- Input (`@/components/ui/input`)
+- Label (`@/components/ui/label`)
 - Popover (`@/components/ui/popover`)
