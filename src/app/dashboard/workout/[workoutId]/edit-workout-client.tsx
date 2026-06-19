@@ -271,7 +271,7 @@ export function EditWorkoutClient({ workout }: { workout: WorkoutData }) {
         </Button>
 
         {success && (
-          <p className="text-sm text-green-600 dark:text-green-400 text-center">
+          <p className="text-sm text-green-400 text-center">
             Workout updated successfully.
           </p>
         )}
