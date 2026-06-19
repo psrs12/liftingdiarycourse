@@ -26,21 +26,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <ClerkProvider>
-          <header className="flex items-center justify-between px-6 py-3 border-b border-zinc-200 dark:border-zinc-800">
+          <header className="flex items-center justify-between px-6 py-3 border-b border-border">
             <span className="text-lg font-semibold font-sans">Lifting Diary</span>
             <nav className="flex items-center gap-3">
               <Show when="signed-out">
                 <SignInButton mode="modal">
-                  <button className="rounded-full border border-zinc-300 px-4 py-1.5 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800">
+                  <button className="rounded-full border border-border px-4 py-1.5 text-sm font-medium transition-colors hover:bg-accent">
                     Sign in
                   </button>
                 </SignInButton>
                 <SignUpButton mode="modal">
-                  <button className="rounded-full bg-foreground text-background px-4 py-1.5 text-sm font-medium transition-colors hover:bg-zinc-700 dark:hover:bg-zinc-300">
+                  <button className="rounded-full bg-primary text-primary-foreground px-4 py-1.5 text-sm font-medium transition-colors hover:bg-primary/80">
                     Sign up
                   </button>
                 </SignUpButton>
